@@ -1,0 +1,2 @@
+nslookup slash16.org
+#dig +short slash16.org

@@ -1,0 +1,2 @@
+kill -9 $(ps -aux | grep "tail -f /var/log/syslog" | awk '{print $2}' | head -1) 
+#kill -p $! (permet de kill le dernier programme)

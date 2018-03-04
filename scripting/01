@@ -1,0 +1,1 @@
+cat /etc/passwd | grep -v '^$\|^\s*\#' | awk -F':' '{print "login: " $1, "UID: " $3, "Path: " $6}' | column -t

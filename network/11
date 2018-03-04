@@ -1,0 +1,2 @@
+Le comportement du traceroute est etrange car il sort du reseau prive pour y revenir ensuite,
+techniquement nous sortons du reseau local definitivement a 192.168.255.1 (192.168.255.1)

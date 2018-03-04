@@ -1,0 +1,17 @@
+if test -e /var/backups/crontab.bak
+	then
+		diff /etc/crontab /var/backups/crontab.bak > /var/tmp/buffer
+		if test -s /var/tmp/buffer
+			then
+				cat /var/tmp/buffer | mail -s "Crontab Update" root
+				cp /etc/crontab /var/backups/crontab.bak
+				rm /var/tmp/buffer
+		else
+			rm /var/tmp/buffer
+		fi
+else
+	cp /etc/crontab /var/backups/crontab.bak
+	echo "Historic not found, creation of a new one" | mail -s "Crontab Update" root
+fi
+
+# Il faut lancer l'app crontab -e et taper la ligne de commande suivante 0 0 * * * <path>/04
